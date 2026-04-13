@@ -362,7 +362,6 @@ function sBadge($s) {
             <button type="button" class="btn btn-warning btn-sm edit-katalog-btn"
               data-id="<?= $k['id_katalog'] ?>"
               data-id-layanan="<?= $k['id_layanan'] ?>"
-
               data-varian="<?= $k['varian'] ?>"
               data-harga="<?= $k['harga'] ?>"
               data-satuan="<?= $k['satuan'] ?>"
@@ -725,7 +724,6 @@ function sBadge($s) {
     const formFields = {
       id:       document.getElementById('modal_id_katalog'),
       layanan:  document.getElementById('modal_id_layanan'),
-
       varian:   document.getElementById('modal_varian'),
       harga:    document.getElementById('modal_harga'),
       satuan:   document.getElementById('modal_satuan'),
@@ -736,7 +734,6 @@ function sBadge($s) {
     function openEditModal(data) {
       formFields.id.value       = data.id;
       formFields.layanan.value  = data.idLayanan;
-      formFields.jenis.value    = data.jenisLayanan;
       formFields.varian.value   = data.varian;
       formFields.harga.value    = data.harga;
       formFields.satuan.value   = data.satuan;
@@ -755,14 +752,13 @@ function sBadge($s) {
     document.querySelectorAll('.edit-katalog-btn').forEach(btn => {
       btn.addEventListener('click', function(){
         openEditModal({
-          id:           this.dataset.id,
-          idLayanan:    this.dataset.idLayanan,
-          jenisLayanan: this.dataset.jenisLayanan,
-          varian:       this.dataset.varian,
-          harga:        this.dataset.harga,
-          satuan:       this.dataset.satuan,
-          status:       this.dataset.status,
-          deskripsi:    this.dataset.deskripsi
+          id:      this.dataset.id,
+          idLayanan: this.dataset.idLayanan,
+          varian:    this.dataset.varian,
+          harga:     this.dataset.harga,
+          satuan:    this.dataset.satuan,
+          status:    this.dataset.status,
+          deskripsi: this.dataset.deskripsi
         });
       });
     });
